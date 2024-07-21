@@ -9,7 +9,7 @@ import { fetchImages } from './services/api';
 import { Toaster } from 'react-hot-toast';
 
 export const App = () => {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState(null);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
@@ -60,8 +60,8 @@ export const App = () => {
       <SearchBar onSubmit={handleSubmit} />
       {isLoading && <Loader />}
       {error && <ErrorMessage message={error.message} />}
-      {images && <ImageGallery images={images} onImageCLick={openModal} />}
-      {images && <LoadMoreBtn onClick={loadMore} />}
+      {images && <ImageGallery images={images} onImageClick={openModal} />}
+      {images && !isLoading && <LoadMoreBtn onClick={loadMore} />}
       {showModal && (
         <ImageModal
           isOpen={!!selectedImage}

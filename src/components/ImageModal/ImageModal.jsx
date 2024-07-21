@@ -16,7 +16,7 @@ const customStyles = {
   },
 };
 
-function ImageModal({ image, isOpen, onClose }) {
+function ImageModal({ image, isOpen, onRequestClose }) {
   if (!image) {
     return null;
   }
@@ -25,12 +25,12 @@ function ImageModal({ image, isOpen, onClose }) {
       <Modal
         style={customStyles}
         isOpen={isOpen}
-        onRequestClose={onClose}
+        onRequestClose={onRequestClose}
         contentLabel='image Modal'
         overlayClassName={s.overlay}
         appElement={document.getElementById('root')}
       >
-        <button onClick={onClose} className={s.closeBtn}>
+        <button onClick={onRequestClose} className={s.closeBtn}>
           Close
         </button>
 
