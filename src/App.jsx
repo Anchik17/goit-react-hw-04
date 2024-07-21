@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar/SearchBar';
 import Loader from './components/Loader/Loader';
 import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
@@ -14,7 +14,7 @@ export const App = () => {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
@@ -62,11 +62,13 @@ export const App = () => {
       {error && <ErrorMessage message={error.message} />}
       {images && <ImageGallery images={images} onImageCLick={openModal} />}
       {images && <LoadMoreBtn onClick={loadMore} />}
-      <ImageModal
-        isOpen={!!selectedImage}
-        image={selectedImage}
-        onRequestClose={closeModal}
-      />
+      {showModal && (
+        <ImageModal
+          isOpen={!!selectedImage}
+          image={selectedImage}
+          onRequestClose={closeModal}
+        />
+      )}
       <Toaster />
     </div>
   );

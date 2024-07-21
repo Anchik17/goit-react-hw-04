@@ -5,11 +5,12 @@ function ImageCard({ image, onClick }) {
     onClick(image);
   };
   return (
-    <div className={s.card} onClick={handleClick}>
+    <div className={s.card}>
       <img
         src={image.urls.small}
         alt={image.alt_descriotion}
         className={s.image}
+        onClick={handleClick}
       />
     </div>
   );
