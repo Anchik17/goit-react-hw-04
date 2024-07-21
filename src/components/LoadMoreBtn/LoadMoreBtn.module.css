@@ -1,0 +1,20 @@
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.loadMoreBtn {
+  padding: 15px 30px;
+  background-color: #be567d;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  justify-content: center;
+}
+
+.loadMoreBtn:hover {
+  background-color: #cf6f92;
+}

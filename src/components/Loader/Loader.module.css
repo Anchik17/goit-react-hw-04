@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+}
+
+.loaderContainer div:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loaderContainer div:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.loaderBtn {
+  padding: 15px 30px;
+  background-color: #00bfff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loaderBtn:hover,
+.loaderBtn:focus {
+  background-color: aqua;
+}
