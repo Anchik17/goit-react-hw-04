@@ -9,7 +9,6 @@ function ImageCard({ image, onClick }) {
       <img
         src={image.urls.small}
         alt={image.alt_descriotion}
-        className={s.image}
         onClick={handleClick}
       />
     </div>

@@ -30,10 +30,6 @@ function ImageModal({ image, isOpen, onRequestClose }) {
         overlayClassName={s.overlay}
         appElement={document.getElementById('root')}
       >
-        <button onClick={onRequestClose} className={s.closeBtn}>
-          Close
-        </button>
-
         <div>
           <img
             src={image.urls.regular}
